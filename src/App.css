@@ -1,0 +1,109 @@
+/* Estilos generales */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Estilos para la aplicación */
+.app {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 1000px;
+}
+
+.app h1 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+/* Estilos para la lista de pedidos */
+.order-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Estilos para cada pedido */
+.order-item {
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.order-item:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.order-item h3 {
+  color: #007bff;
+  margin-top: 0;
+}
+
+.order-item p {
+  margin: 0.5rem 0;
+}
+
+.order-item ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.order-item li {
+  background-color: #e9ecef;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+/* Estilos para las estadísticas */
+.order-stats {
+  background-color: #007bff;
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.order-stats h4 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.order-stats p {
+  margin: 0.5rem 0;
+}
+
+/* Estilos para formularios y filtros (si hay) */
+form, select {
+  margin-bottom: 1rem;
+}
+
+button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
