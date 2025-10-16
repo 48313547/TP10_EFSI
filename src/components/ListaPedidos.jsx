@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ItemPedido from './OrderItem';
+import ItemPedido from './ItemPedido';
 
 function ListaPedidos({ pedidos }) {
   return (

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function ItemPedido({ id, cliente, fecha, estado, items }) {
   return (
-    <div className="order-item" style={{ border: '1px solid #ccc', marginBottom: '1rem', padding: '1rem' }}>
+    <div className="order-item">
       <h3>ID del Pedido: {id}</h3>
       <p><strong>Cliente:</strong> {cliente}</p>
       <p><strong>Fecha:</strong> {fecha.toLocaleDateString()}</p>

@@ -25,7 +25,7 @@ function FormularioNuevoPedido({ onAddOrder }) {
     }
 
     const nuevoPedido = {
-      id: Date.now(), // Generación simple de ID
+      id: Date.now(),
       cliente,
       fecha: new Date(),
       estado: 'pendiente',
@@ -58,7 +58,7 @@ function FormularioNuevoPedido({ onAddOrder }) {
   };
 
   return (
-    <form onSubmit={manejarEnvio} style={{ border: '1px solid #ccc', padding: '1rem', marginBottom: '1rem' }}>
+    <form onSubmit={manejarEnvio} className="new-order-form">
       <h3>Agregar Nuevo Pedido</h3>
       <div>
         <label>Cliente:</label>
@@ -68,12 +68,12 @@ function FormularioNuevoPedido({ onAddOrder }) {
           onChange={(e) => setCliente(e.target.value)}
           required
         />
-        {errores.cliente && <p style={{ color: 'red' }}>{errores.cliente}</p>}
+        {errores.cliente && <p className="error">{errores.cliente}</p>}
       </div>
       <div>
         <h4>Artículos:</h4>
         {items.map((item, index) => (
-          <div key={index} style={{ marginBottom: '0.5rem' }}>
+          <div key={index} className="item-row">
             <input
               type="number"
               placeholder="ID del Producto"
@@ -108,7 +108,7 @@ function FormularioNuevoPedido({ onAddOrder }) {
           </div>
         ))}
         <button type="button" onClick={agregarItem}>Agregar Artículo</button>
-        {errores.items && <p style={{ color: 'red' }}>{errores.items}</p>}
+        {errores.items && <p className="error">{errores.items}</p>}
       </div>
       <button type="submit">Agregar Pedido</button>
     </form>

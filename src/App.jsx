@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import ListaPedidos from './components/OrderList';
-import FiltroPedidos from './components/OrderFilter';
-import EstadisticasPedidos from './components/OrderStats';
-import FormularioNuevoPedido from './components/NewOrderForm';
+import ListaPedidos from './components/ListaPedidos';
+import FiltroPedidos from './components/FiltroPedidos';
+import EstadisticasPedidos from './components/EstadisticasPedidos';
+import FormularioNuevoPedido from './components/AgregarPedido';
 import './App.css';
 
 function Aplicacion() {

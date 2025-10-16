@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function EstadisticasPedidos({ total, pendientes, enviados, entregados }) {
   return (
-    <div className="order-stats" style={{ marginTop: '1rem' }}>
+    <div className="order-stats">
       <h4>Estadísticas de Pedidos</h4>
       <p>Total de Pedidos: {total}</p>
       <p>Pendientes: {pendientes}</p>
