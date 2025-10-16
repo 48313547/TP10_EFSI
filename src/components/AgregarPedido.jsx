@@ -25,7 +25,6 @@ function FormularioNuevoPedido({ onAddOrder }) {
     }
 
     const nuevoPedido = {
-      id: Date.now(),
       cliente,
       fecha: new Date(),
       estado: 'pendiente',

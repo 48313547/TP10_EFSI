@@ -7,10 +7,11 @@ import './App.css';
 
 function Aplicacion() {
   const [pedidos, setPedidos] = useState([
-    
+
   ]);
 
   const [filtro, setFiltro] = useState('');
+  const [nextId, setNextId] = useState(1);
 
   const pedidosFiltrados = filtro ? pedidos.filter(pedido => pedido.estado === filtro) : pedidos;
 
@@ -22,7 +23,9 @@ function Aplicacion() {
   };
 
   const agregarPedido = (nuevoPedido) => {
-    setPedidos([...pedidos, nuevoPedido]);
+    const pedidoConId = { ...nuevoPedido, id: nextId };
+    setPedidos([...pedidos, pedidoConId]);
+    setNextId(nextId + 1);
   };
 
   return (
