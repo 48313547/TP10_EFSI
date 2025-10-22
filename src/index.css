@@ -1,68 +1,172 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+/* ===============================
+   RESET Y CONFIGURACIÓN GENERAL
+================================== */
+* {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+html, body {
+  height: 100%;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #2b3a4a;
+  color: #f5f5f5;
+}
+
+/* ===============================
+   NAVEGACIÓN SUPERIOR
+================================== */
+nav {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  background-color: #1e2a36;
+  padding: 15px 0;
+  border-bottom: 3px solid #ff9800;
+}
+
+nav a {
+  color: #d7e1ec;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  color: #ffb74d;
+}
+
+/* ===============================
+   CONTENEDOR PRINCIPAL
+================================== */
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
+  min-height: calc(100vh - 70px);
+}
+
+/* Tarjeta central */
+.card {
+  background-color: #34495e;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 800px;
+}
+
+.card h1, .card h2, .card h3 {
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* ===============================
+   FORMULARIOS
+================================== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center; /* Centra los inputs y selects */
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+input, select {
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+input:focus, select:focus {
+  border: 2px solid #ff9800;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #ff9800;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: 0.3s;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+button:hover {
+  background-color: #ffa726;
+}
+
+/* ===============================
+   SECCIONES DE PEDIDOS
+================================== */
+.order-item {
+  background-color: #3e556b;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.order-item h3 {
+  color: #ffd54f;
+  margin-bottom: 8px;
+}
+
+.order-item ul {
+  list-style: none;
+  margin-top: 10px;
+  padding-left: 10px;
+}
+
+/* ===============================
+   ESTADÍSTICAS
+================================== */
+.order-stats {
+  background-color: #f44336;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 25px;
+  color: white;
+}
+
+.order-stats h4 {
+  margin-bottom: 12px;
+}
+
+/* ===============================
+   ERRORES Y MENSAJES
+================================== */
+.error {
+  color: #ff5252;
+  font-size: 0.9rem;
+  margin-top: -5px;
+}
+
+
+@media (max-width: 768px) {
+  .main-container {
+    padding: 20px;
   }
-  a:hover {
-    color: #747bff;
+
+  .card {
+    width: 100%;
+    padding: 20px;
   }
-  button {
-    background-color: #f9f9f9;
+
+  nav {
+    flex-wrap: wrap;
+    gap: 10px;
   }
 }
+

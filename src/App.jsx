@@ -1,42 +1,42 @@
-import { useState } from 'react';
-import ListaPedidos from './components/ListaPedidos';
-import FiltroPedidos from './components/FiltroPedidos';
-import EstadisticasPedidos from './components/EstadisticasPedidos';
-import FormularioNuevoPedido from './components/AgregarPedido';
-import './App.css';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import VerPedidos from './pages/VerPedidos';
+import Estadisticas from './pages/Estadisticas';
+import AgregarPedido from './pages/AgregarPedido';
+import fondo from './assets/a.jpg';
+import "./App.css";
 
-function Aplicacion() {
-  const [pedidos, setPedidos] = useState([
+export default function App() {
+  const [pedidos, setPedidos] = useState([]);
 
-  ]);
-
-  const [filtro, setFiltro] = useState('');
-  const [nextId, setNextId] = useState(1);
-
-  const pedidosFiltrados = filtro ? pedidos.filter(pedido => pedido.estado === filtro) : pedidos;
-
-  const estadisticas = {
-    total: pedidos.length,
-    pendientes: pedidos.filter(pedido => pedido.estado === 'pendiente').length,
-    enviados: pedidos.filter(pedido => pedido.estado === 'enviado').length,
-    entregados: pedidos.filter(pedido => pedido.estado === 'entregado').length,
-  };
-
-  const agregarPedido = (nuevoPedido) => {
-    const pedidoConId = { ...nuevoPedido, id: nextId };
-    setPedidos([...pedidos, pedidoConId]);
-    setNextId(nextId + 1);
+  const agregarPedido = (nuevo) => {
+    setPedidos([...pedidos, { id: pedidos.length + 1, ...nuevo }]);
   };
 
   return (
-    <div className="app">
-      <h1>Sistema de Gestión de Pedidos</h1>
-      <FormularioNuevoPedido onAddOrder={agregarPedido} />
-      <FiltroPedidos filtro={filtro} onFiltroChange={setFiltro} />
-      <EstadisticasPedidos {...estadisticas} />
-      <ListaPedidos pedidos={pedidosFiltrados} />
-    </div>
+    <Router>
+      <div
+        style={{
+          backgroundImage: `url(${fondo})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          minHeight: '100vh',
+          padding: '20px',
+          color: 'white',
+        }}
+      >
+        <nav style={{ marginBottom: '20px' }}>
+          <Link to="/" style={{ margin: '0 10px' }}>Ver Pedidos</Link>
+          <Link to="/estadisticas" style={{ margin: '0 10px' }}>Estadísticas</Link>
+          <Link to="/nuevo" style={{ margin: '0 10px' }}>Nuevo Pedido</Link>
+        </nav>
+
+        <Routes>
+          <Route path="/" element={<VerPedidos pedidos={pedidos} />} />
+          <Route path="/estadisticas" element={<Estadisticas pedidos={pedidos} />} />
+          <Route path="/nuevo" element={<AgregarPedido onAddOrder={agregarPedido} />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
-
-export default Aplicacion;
