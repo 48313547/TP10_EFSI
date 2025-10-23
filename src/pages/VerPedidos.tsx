@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import ListaPedidos from '../components/ListaPedidos';
-import FiltroPedidos from '../components/FiltroPedidos';
+import ListaPedidos from '../components/ListaPedidos.jsx';
+import FiltroPedidos from '../components/FiltroPedidos.jsx';
 
 export default function VerPedidos({ pedidos }) {
   const [filtro, setFiltro] = useState('');

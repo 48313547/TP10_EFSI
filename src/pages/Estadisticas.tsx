@@ -1,5 +1,5 @@
 import React from 'react';
-import EstadisticasPedidos from '../components/EstadisticasPedidos';
+import EstadisticasPedidos from '../components/EstadisticasPedidos.jsx';
 
 export default function Estadisticas({ pedidos }) {
   const stats = {

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import VerPedidos from './pages/VerPedidos';
-import Estadisticas from './pages/Estadisticas';
-import AgregarPedido from './pages/AgregarPedido';
+import VerPedidos from './pages/VerPedidos.jsx';
+import Estadisticas from './pages/Estadisticas.jsx';
+import AgregarPedido from './pages/AgregarPedido.jsx';
 import fondo from './assets/a.jpg';
 import "./App.css";
 

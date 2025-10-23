@@ -1,5 +1,5 @@
 import React from 'react';
-import FormularioNuevoPedido from '../components/AgregarPedido';
+import FormularioNuevoPedido from '../components/AgregarPedido.jsx';
 
 export default function AgregarPedido({ onAddOrder }) {
   return (
