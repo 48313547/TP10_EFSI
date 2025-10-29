@@ -1,16 +1,37 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import VerPedidos from './pages/VerPedidos.jsx';
-import Estadisticas from './pages/Estadisticas.jsx';
-import AgregarPedido from './pages/AgregarPedido.jsx';
+import VerPedidos from './pages/VerPedidos';
+import Estadisticas from './pages/Estadisticas';
+import AgregarPedido from './pages/AgregarPedido';
 import fondo from './assets/a.jpg';
 import "./App.css";
 
-export default function App() {
-  const [pedidos, setPedidos] = useState([]);
+export type EstadoPedido = 'pendiente' | 'enviado' | 'entregado';
 
-  const agregarPedido = (nuevo) => {
-    setPedidos([...pedidos, { id: pedidos.length + 1, ...nuevo }]);
+export interface ItemProducto {
+  idProducto: number;
+  nombre: string;
+  cantidad: number;
+  precio: number;
+}
+
+export interface Pedido {
+  id: number;
+  cliente: string;
+  fecha: Date;
+  estado: EstadoPedido;
+  items: ItemProducto[];
+}
+
+const App: React.FC = () => {
+  const [pedidos, setPedidos] = useState<Pedido[]>([]);
+
+  const agregarPedido = (nuevo: Omit<Pedido, 'id'>) => {
+    const nuevoPedido: Pedido = {
+      id: pedidos.length + 1,
+      ...nuevo,
+    };
+    setPedidos([...pedidos, nuevoPedido]);
   };
 
   return (
@@ -39,4 +60,6 @@ export default function App() {
       </div>
     </Router>
   );
-}
+};
+
+export default App;

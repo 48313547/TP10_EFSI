@@ -1,172 +1,190 @@
-/* ===============================
-   RESET Y CONFIGURACIÓN GENERAL
-================================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html, body {
-  height: 100%;
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  background-color: #2b3a4a;
-  color: #f5f5f5;
-}
-
-/* ===============================
-   NAVEGACIÓN SUPERIOR
-================================== */
-nav {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  background-color: #1e2a36;
-  padding: 15px 0;
-  border-bottom: 3px solid #ff9800;
-}
-
-nav a {
-  color: #d7e1ec;
-  text-decoration: none;
-  font-weight: 500;
-  transition: 0.2s;
-}
-
-nav a:hover {
-  color: #ffb74d;
-}
-
-/* ===============================
-   CONTENEDOR PRINCIPAL
-================================== */
-.main-container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 40px;
-  min-height: calc(100vh - 70px);
-}
-
-/* Tarjeta central */
-.card {
-  background-color: #34495e;
-  padding: 30px;
+/* FORMULARIO NUEVO PEDIDO */
+.new-order-form {
+  background: rgba(40, 55, 71, 0.9);
+  padding: 30px 40px;
   border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
   width: 90%;
-  max-width: 800px;
-}
-
-.card h1, .card h2, .card h3 {
-  color: #ffffff;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-/* ===============================
-   FORMULARIOS
-================================== */
-form {
+  max-width: 900px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  align-items: center; /* Centra los inputs y selects */
+  align-items: center;
+  color: white;
 }
 
-label {
-  font-weight: 600;
-  margin-bottom: 5px;
+.new-order-form h3 {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-input, select {
-  padding: 8px;
-  border-radius: 6px;
+/* CLIENTE + ESTADO */
+.new-order-form .cliente-estado {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.new-order-form .cliente-estado input,
+.new-order-form .cliente-estado select {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
   border: none;
-  outline: none;
   background-color: #f8f9fa;
   color: #333;
 }
 
-input:focus, select:focus {
-  border: 2px solid #ff9800;
+/* FILA DE ARTÍCULOS */
+.item-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
-button {
-  background-color: #ff9800;
-  color: #fff;
-  font-weight: 600;
-  border: none;
+.item-row input {
+  flex: 1;
+  padding: 8px;
   border-radius: 6px;
-  padding: 8px 14px;
+  border: none;
+  background-color: #f8f9fa;
+}
+
+/* BOTÓN AGREGAR ARTÍCULO */
+.item-row button,
+.new-order-form .add-item-btn {
+  background-color: #ff9800; /* amarillo */
+  border: none;
+  border-radius: 8px;
+  padding: 12px 30px;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  align-self: flex-end;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+}
+
+.item-row button:hover,
+.new-order-form .add-item-btn:hover {
+  background-color: #ffa726;
+  transform: translateY(-2px);
+}
+
+/* BOTÓN AGREGAR PEDIDO */
+.new-order-form .submit-btn {
+  margin-top: 25px;
+  background-color: #673ab7; /* morado */
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+}
+
+.new-order-form .submit-btn:hover {
+  background-color: #7e57c2;
+  transform: translateY(-2px);
+}
+
+/* ERRORES */
+.error {
+  color: #ff5252;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+/* TARJETAS DE ESTADÍSTICAS Y SECCIONES */
+.section-container {
+  background: rgba(46, 64, 83, 0.9);
+  padding: 40px;
+  border-radius: 14px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+  width: 90%;
+  max-width: 900px;
+  margin: 60px auto;
+  color: #fff;
+}
+
+.section-container h2 {
+  text-align: center;
+  color: #ffb74d;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #ff9800;
+  padding-bottom: 10px;
+}
+
+.stats-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 25px;
+}
+
+.stat-card {
+  background: #2e4053;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-6px);
+  background-color: #3b5166;
+}
+
+.stat-card h4 {
+  color: #ffb74d;
+  margin-bottom: 8px;
+}
+
+.stat-card p {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+/* BOTONES REUTILIZABLES */
+.btn-primary {
+  background-color: #673ab7;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
 }
 
-button:hover {
-  background-color: #ffa726;
+.btn-primary:hover {
+  background-color: #7e57c2;
+  transform: scale(1.05);
 }
 
-/* ===============================
-   SECCIONES DE PEDIDOS
-================================== */
-.order-item {
-  background-color: #3e556b;
-  padding: 15px;
-  border-radius: 8px;
-  margin-bottom: 12px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-}
-
-.order-item h3 {
-  color: #ffd54f;
-  margin-bottom: 8px;
-}
-
-.order-item ul {
-  list-style: none;
-  margin-top: 10px;
-  padding-left: 10px;
-}
-
-/* ===============================
-   ESTADÍSTICAS
-================================== */
-.order-stats {
-  background-color: #f44336;
-  padding: 20px;
-  border-radius: 10px;
-  margin-top: 25px;
+.btn-warning {
+  background-color: #ff9800;
   color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.order-stats h4 {
-  margin-bottom: 12px;
+.btn-warning:hover {
+  background-color: #ffa726;
+  transform: scale(1.05);
 }
 
-/* ===============================
-   ERRORES Y MENSAJES
-================================== */
-.error {
-  color: #ff5252;
-  font-size: 0.9rem;
-  margin-top: -5px;
-}
-
-
-@media (max-width: 768px) {
-  .main-container {
-    padding: 20px;
-  }
-
-  .card {
-    width: 100%;
-    padding: 20px;
-  }
-
-  nav {
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-}
 

@@ -1,0 +1,36 @@
+.verpedidos-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 40px;
+  }
+  
+  .verpedidos-card {
+    background: rgba(25, 35, 45, 0.9);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+    padding: 50px 80px;
+    width: 85%;
+    max-width: 800px;
+    text-align: center;
+    backdrop-filter: blur(8px);
+  }
+  
+  .titulo-pedidos {
+    color: #ffb74d;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #ff9800;
+    display: inline-block;
+    padding-bottom: 8px;
+  }
+  
+  .sin-pedidos {
+    color: #ddd;
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-top: 30px;
+  }
+  

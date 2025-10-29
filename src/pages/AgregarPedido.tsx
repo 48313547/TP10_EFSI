@@ -1,11 +1,21 @@
 import React from 'react';
-import FormularioNuevoPedido from '../components/AgregarPedido.jsx';
+import FormularioNuevoPedido from '../components/AgregarPedido';
+import "./AgregarPedido.css";
 
-export default function AgregarPedido({ onAddOrder }) {
+
+import { Pedido } from '../App';
+
+interface AgregarPedidoProps {
+  onAddOrder: (nuevoPedido: Omit<Pedido, 'id'>) => void;
+}
+
+const AgregarPedido: React.FC<AgregarPedidoProps> = ({ onAddOrder }) => {
   return (
     <div>
-      <h2>➕ Agregar Nuevo Pedido</h2>
+      
       <FormularioNuevoPedido onAddOrder={onAddOrder} />
     </div>
   );
-}
+};
+
+export default AgregarPedido;

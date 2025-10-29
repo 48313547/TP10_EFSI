@@ -1,14 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-function FiltroPedidos({ filtro, onFiltroChange }) {
+interface FiltroPedidosProps {
+  filtro: '' | 'pendiente' | 'enviado' | 'entregado';
+  onFiltroChange: (nuevoFiltro: '' | 'pendiente' | 'enviado' | 'entregado') => void;
+}
+
+const FiltroPedidos: React.FC<FiltroPedidosProps> = ({ filtro, onFiltroChange }) => {
   return (
     <div className="order-filter">
       <label htmlFor="filtro-estado">Filtrar por Estado:</label>
       <select
         id="filtro-estado"
         value={filtro}
-        onChange={(e) => onFiltroChange(e.target.value)}
+        onChange={(e) =>
+          onFiltroChange(e.target.value as '' | 'pendiente' | 'enviado' | 'entregado')
+        }
       >
         <option value="">Todos</option>
         <option value="pendiente">Pendiente</option>
@@ -17,11 +23,7 @@ function FiltroPedidos({ filtro, onFiltroChange }) {
       </select>
     </div>
   );
-}
-
-FiltroPedidos.propTypes = {
-  filtro: PropTypes.oneOf(['', 'pendiente', 'enviado', 'entregado']),
-  onFiltroChange: PropTypes.func.isRequired,
 };
 
 export default FiltroPedidos;
+

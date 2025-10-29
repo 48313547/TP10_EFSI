@@ -1,0 +1,79 @@
+.estadisticas-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 40px;
+  }
+  
+  .estadisticas-card {
+    background: rgba(25, 35, 45, 0.9);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+    padding: 50px 80px;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    backdrop-filter: blur(8px);
+  }
+  
+  .titulo-estadisticas {
+    color: #ffb74d;
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #ff9800;
+    display: inline-block;
+    padding-bottom: 8px;
+  }
+  
+  .estadisticas-lineas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 40px;
+  }
+  
+  .linea {
+    font-size: 1.3rem;
+    font-weight: 500;
+    position: relative;
+    width: 60%;
+    text-align: left;
+    padding-bottom: 5px;
+  }
+  
+  .linea::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background: #ffa726;
+    border-radius: 5px;
+  }
+  
+  .linea span {
+    color: #fff;
+    font-weight: 700;
+    margin-left: 10px;
+  }
+  
+  .total-pedidos {
+    margin-top: 40px;
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+    padding-top: 25px;
+  }
+  
+  .total-pedidos h3 {
+    color: #ffcc80;
+    font-size: 1.5rem;
+  }
+  
+  .total-pedidos span {
+    color: #fff;
+    font-weight: 700;
+  }
+  

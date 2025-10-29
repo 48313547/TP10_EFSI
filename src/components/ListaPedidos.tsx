@@ -1,11 +1,31 @@
 import React from 'react';
-import ItemPedido from './ItemPedido.js';
-import PropTypes from 'prop-types';
+import ItemPedido from './ItemPedido';
 
-function ListaPedidos({ pedidos }) {
+type EstadoPedido = 'pendiente' | 'enviado' | 'entregado';
+
+interface ItemProducto {
+  idProducto: number;
+  nombre: string;
+  cantidad: number;
+  precio: number;
+}
+
+interface Pedido {
+  id: number;
+  cliente: string;
+  fecha?: Date;
+  estado?: EstadoPedido;
+  items: ItemProducto[];
+}
+
+interface ListaPedidosProps {
+  pedidos: Pedido[];
+}
+
+const ListaPedidos: React.FC<ListaPedidosProps> = ({ pedidos }) => {
   return (
     <div className="order-list">
-      {pedidos.map(pedido => (
+      {pedidos.map((pedido) => (
         <ItemPedido
           key={pedido.id}
           id={pedido.id}
@@ -17,25 +37,7 @@ function ListaPedidos({ pedidos }) {
       ))}
     </div>
   );
-}
-
-ListaPedidos.propTypes = {
-  pedidos: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      cliente: PropTypes.string.isRequired,
-      fecha: PropTypes.instanceOf(Date),
-      estado: PropTypes.oneOf(['pendiente', 'enviado', 'entregado']),
-      items: PropTypes.arrayOf(
-        PropTypes.shape({
-          idProducto: PropTypes.number.isRequired,
-          nombre: PropTypes.string.isRequired,
-          cantidad: PropTypes.number.isRequired,
-          precio: PropTypes.number.isRequired,
-        })
-      ).isRequired,
-    })
-  ).isRequired,
 };
 
 export default ListaPedidos;
+

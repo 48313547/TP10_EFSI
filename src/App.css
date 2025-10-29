@@ -1,17 +1,23 @@
-/* ===============================
-   CONFIGURACIÓN GENERAL DE APP
-================================== */
-.App {
+
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #101820, #1c2833);
+  color: #fff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(135deg, #1e2a36, #2b3a4a);
-  color: #fff;
 }
 
-/* ===============================
-   CABECERA Y NAVEGACIÓN
-================================== */
+
+.App {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+
 header {
   background-color: #1e2a36;
   border-bottom: 3px solid #ff9800;
@@ -22,6 +28,7 @@ header {
   font-weight: 700;
   letter-spacing: 0.5px;
 }
+
 
 nav {
   display: flex;
@@ -42,9 +49,7 @@ nav a:hover {
   color: #ffb74d;
 }
 
-/* ===============================
-   CONTENIDO PRINCIPAL
-================================== */
+
 main {
   flex: 1;
   display: flex;
@@ -53,55 +58,65 @@ main {
   padding: 40px;
 }
 
-section {
-  background-color: #34495e;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+.section-container {
+  background: rgba(46, 64, 83, 0.9);
+  padding: 40px;
+  border-radius: 14px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
   width: 90%;
-  max-width: 800px;
-  transition: all 0.3s ease-in-out;
+  max-width: 900px;
+  margin: 60px auto;
+  color: #fff;
 }
 
-section:hover {
-  transform: translateY(-2px);
-}
-
-/* Títulos */
 h1, h2, h3 {
   text-align: center;
-  color: #ffffff;
+  color: #fff;
   margin-bottom: 25px;
 }
 
-/* ===============================
-   BOTONES GENERALES
-================================== */
-button {
-  width: 150px;          /* más compacto */
-  padding: 10px 15px;
+.section-container h2 {
+  color: #ffb74d;
+  border-bottom: 2px solid #ff9800;
+  padding-bottom: 10px;
+}
+
+button, .btn-primary, .btn-warning {
+  border: none;
   border-radius: 8px;
-  background-color: #ff9800;
+  padding: 10px 20px;
   color: white;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.2s ease;
+  transition: 0.3s;
 }
 
-button:hover {
+button:hover, .btn-primary:hover, .btn-warning:hover {
+  transform: scale(1.05);
+}
+
+.btn-primary {
+  background-color: #673ab7;
+}
+
+.btn-primary:hover {
+  background-color: #7e57c2;
+}
+
+.btn-warning {
+  background-color: #ff9800;
+}
+
+.btn-warning:hover {
   background-color: #ffa726;
-  transform: scale(1.03);
 }
 
-/* ===============================
-   FORMULARIOS Y ENTRADAS
-================================== */
 input, select, textarea {
-  width: 300px;        /* ancho fijo más cuadrado */
-  max-width: 90%;      /* no se pase en pantallas chicas */
+  width: 100%;
+  max-width: 400px;
   padding: 10px;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: none;
   background-color: #f8f9fa;
   color: #333;
   font-size: 0.95rem;
@@ -113,44 +128,56 @@ input:focus, select:focus, textarea:focus {
   border: 2px solid #ff9800;
 }
 
-/* ===============================
-   LISTAS DE PEDIDOS
-================================== */
-.pedido-item {
+.pedido-item, .order-item {
   background-color: #3e556b;
-  padding: 15px;
+  padding: 15px 20px;
   border-radius: 10px;
   margin-bottom: 15px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
-.pedido-item h3 {
+.pedido-item:hover, .order-item:hover {
+  transform: scale(1.02);
+  background-color: #46627f;
+}
+
+.pedido-item h3, .order-item h3 {
   color: #ffd54f;
+  margin-bottom: 8px;
 }
 
-.pedido-item small {
-  color: #ddd;
-}
-
-/* ===============================
-   ESTADÍSTICAS
-================================== */
-.stats {
-  background-color: #ff7043;
-  padding: 20px;
-  border-radius: 10px;
+.stats-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 25px;
   margin-top: 25px;
-  text-align: center;
-  color: #fff;
 }
 
-.stats h4 {
+.stat-card {
+  background: #2e4053;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-6px);
+  background-color: #3b5166;
+}
+
+.stat-card h4 {
+  color: #ffb74d;
   margin-bottom: 10px;
 }
 
-/* ===============================
-   FOOTER
-================================== */
+.stat-card p {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
 footer {
   background-color: #1e2a36;
   text-align: center;
@@ -160,17 +187,14 @@ footer {
   border-top: 3px solid #ff9800;
 }
 
-/* ===============================
-   RESPONSIVE
-================================== */
 @media (max-width: 768px) {
   main {
     padding: 20px;
   }
 
-  section {
-    width: 100%;
-    padding: 20px;
+  .section-container {
+    width: 95%;
+    padding: 25px;
   }
 
   nav {
