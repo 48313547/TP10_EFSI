@@ -1,4 +1,4 @@
-/* FORMULARIO NUEVO PEDIDO */
+
 .new-order-form {
   background: rgba(40, 55, 71, 0.9);
   padding: 30px 40px;
@@ -18,7 +18,7 @@
   margin-bottom: 20px;
 }
 
-/* CLIENTE + ESTADO */
+
 .new-order-form .cliente-estado {
   display: flex;
   justify-content: space-between;
@@ -37,7 +37,7 @@
   color: #333;
 }
 
-/* FILA DE ARTÍCULOS */
+
 .item-row {
   display: flex;
   align-items: center;
@@ -54,10 +54,10 @@
   background-color: #f8f9fa;
 }
 
-/* BOTÓN AGREGAR ARTÍCULO */
+
 .item-row button,
 .new-order-form .add-item-btn {
-  background-color: #ff9800; /* amarillo */
+  background-color: #ff9800; 
   border: none;
   border-radius: 8px;
   padding: 12px 30px;
@@ -76,10 +76,9 @@
   transform: translateY(-2px);
 }
 
-/* BOTÓN AGREGAR PEDIDO */
 .new-order-form .submit-btn {
   margin-top: 25px;
-  background-color: #673ab7; /* morado */
+  background-color: #673ab7;
   border: none;
   padding: 12px 30px;
   border-radius: 8px;
@@ -96,14 +95,14 @@
   transform: translateY(-2px);
 }
 
-/* ERRORES */
+
 .error {
   color: #ff5252;
   font-size: 0.9rem;
   margin-top: 5px;
 }
 
-/* TARJETAS DE ESTADÍSTICAS Y SECCIONES */
+
 .section-container {
   background: rgba(46, 64, 83, 0.9);
   padding: 40px;
@@ -154,7 +153,7 @@
   font-weight: 600;
 }
 
-/* BOTONES REUTILIZABLES */
+
 .btn-primary {
   background-color: #673ab7;
   border: none;
